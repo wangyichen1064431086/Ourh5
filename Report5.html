@@ -33,20 +33,15 @@
          text-align: center;
         }
         h2{
-         text-align: left;
-         background-color: #AFAFAF;
-         color: #FFFFFF;
-         margin: 5px 10px 5px 10px;
-         padding:5px 5px 5px 5px;
-         white-space: pre;
+        margin: 15px;
+        }
+        h3{
+          margin: 15px;
         }
         .class1{
          text-align: left;
          margin:15px;
          font-size: 18px;
-        }
-        h3{
-         text-align: center;
         }
         img{
             width:100%;
@@ -79,15 +74,46 @@
       <h1><strong>人脸识别项目报告</strong></h1>
     </div>
     
-    <div>
-       <h2><strong>Part1</strong>  演播室里各种拼</h2>
+    <h2>我们和电脑看了一周的电视，然后发现</h2>
+    <div class="class1">
+      在面对海量的视频信息，我们希望有一个搜索引擎能够帮助我们快速的找到想要的内容。
+      特别是对电视台播出的新闻。
+      这些视频相对重要，也难以检索。
+      面对这个问题，我们尝试着利用一些算法对BBC、CCTV-NEWS、CNN三个频道的视频进行分类。<br/>
+      <br/>
+      想象我们和一个3岁的小孩儿一起看电视。
+      当屏幕上出现一个人脸的的时候，我们告诉他这个人是谁（他叫什么，他是主持人还是某个国家的领导人等等）。
+      虽然无法理解主持人是一个什么样的职业，但仅通过长相来他也“认识”个人了。
+      而计算机比三岁小孩儿更强的地方是能够记住成千上百人，并且知道这些人都在视频里出现了多少秒。<br/>
+      <br/>
+      在这个计算机学习的过程中，我们也从另一个角度看了一次电视。
     </div>
+    
+    <h3><strong>光是最基本的元素</strong></h3>
+    <div class="class1">
+      当一个小时的视频被展开之后，首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
+      为了证实这不是一个特例，我们让电脑分析每一张图片。
+      结果不出乎意料，CCTV-NEWS每张图片之间的亮度差别普遍是三个频道里是最高的。<br/>
+      <br/>
+      虽然画面没有必要看上去统一，因为人眼的适应能力很强。
+      但我们觉得背后的成因或许可以为CCTV-NEWS掌控播出效果提供一定的参考。
+      例如：<br/>
+      <ul>
+      对话节目的背景偏暗，可以参考BBC的Hard Talk。
+      <!-- 插入图片 -->
+      一些夜晚画面存在明显的色偏，应该在后期制作时调整白平衡。
+      <!-- 插入图片 -->
+      </ul>
+    </div>
+    
+    <h3><strong>演播室里各种拼</strong></h2>
   
     <div id="sec1">
     <div class="class1">
         BBC、CCTV、CNN都使用着数量差不多的演播室。
         作为电视媒体的门面，演播室是各家暗中比拼技术和设计的视觉载体。
         单从使用的LED屏幕的数量和大小上来看，近期搬进了新大楼的BBC和CCTV-NEWS实力比较强。
+        <!-- 需要有数据和图片的支持 -->
     </div>
     <!--<div id="block1">
         <!--<h3>BBC演播室概览</h3>-
@@ -157,7 +183,7 @@
     
     <div class="class1">
         CNN比较擅长利用不同位置、道具和景深为各节目制造出不同的空间感。
-        例如，News Stream节目就在香港演播室的前方布置了几个移动电视平台。
+        News Stream节目就在香港演播室的前方布置了几个移动电视平台。
     </div>
     <div id="block1">
         <!--<h3>News Stream香港演播室</h3>-->
@@ -170,52 +196,64 @@
             </div>
         </div>
     </div>
+    
     <div class="class1">
         CNN有更多播报地点。
-        这些地方虽然不能算所一个功能完善的演播室，但增加了镜头的新鲜感。
-        通常也是由闲置空间改造而成，例如<a href="http://www.newscaststudio.com/2012/01/09/cnn-finally-begins-using-newsroom-for-newsroom/">以前CNN的新闻间</a>。
+        这些地方虽然不能算做一个功能完善的演播室，但增加了镜头的新鲜感。
+        通常也是由闲置空间改造而成，例如以前CNN的新闻间。<a href="http://www.newscaststudio.com/2012/01/09/cnn-finally-begins-using-newsroom-for-newsroom/">1</a>
     </div>
+    
     <div class="class1">
         一个更大的演播室可以给摄像机提供更多的运动空间。
-        BBC的<a href="http://www.bbc.co.uk/academy/technology/article/art20140313104307334">机器人摄像机</a>使得这个优势得到了更加充分的发挥。
-        以致从演播室画面的动态感来看，BBC超出CNN和CCTV-NEWS不少距离。<br/>
+        BBC的机器人摄像机使得这个优势得到了更加充分的发挥。
+        <a href="http://www.bbc.co.uk/academy/technology/article/art20140313104307334">2</a>
+        已至从演播室画面的动态感来看，BBC超出CNN和CCTV-NEWS不少距离。<br/>
         <!-- 插入运动镜头统计图 -->
     </div>
     
    <div class="class1">
-   整体来看CNN的演播室设计，"去中心化"还是比较明显的。
-   在2012年为美国大选翻新演播室时，<a href="https://www.youtube.com/watch?v=APEqHXrirM8">CNN将两个演播室组成在了一起</a>。
-    <blockquote>
-      这个演播室没有一个真正意义上的主持人桌子，甚至演播室里都不会有一个完全来自新闻间的人。演播室里会充满对话，和各种用来讲故事的技术。
-    </blockquote>
+      整体来看CNN的演播室设计，"去中心化"还是比较明显的。
+      在2012年为美国大选翻新演播室时，CNN将两个演播室组成在了一起。<a href="https://www.youtube.com/watch?v=APEqHXrirM8">3</a>
+     <blockquote>
+       这个演播室没有一个真正意义上的主持人桌子，甚至演播室里都不会有一个完全来自新闻间的人。演播室里会充满对话，和各种用来讲故事的技术。
+     </blockquote>
    </div>
    <!-- 插入视频 -->
    
-    <div>
-       <h2><strong>Part2</strong>  还是说一说纯粹的画面吧</h2>
-    </div>
-    <div class="class1">
-      在说到下面这个问题时，有必要介绍一下我们是怎么让电脑“看”电视的。
-      我们首先对视频源每隔5秒截一张图，再利用软件对这些图片中的人脸进行分类。
-      主持人出镜时长就是由这样统计出来的。<br>
-      当一个小时的视频被压缩成了720张图片之后，我们的直观感受便是CCTV-NEWS的画面没有BBC和CNN统一。
-      为了证实这是一个普遍的现象，我们再利用软件对每张图片的平均亮度进行了分析。
-      发现CCTV-NEWS的画面亮度的波动缺失比BBC和CNN大。
-    </div>
-    <!--插入画面亮度统计图-->
-    
-    <div>
-       <h2><strong>Part3</strong>  运动or静止镜头统计</h2>
-    </div>
-     <!--插入镜头数目统计图-->
-     
-    <div>
-       <h2><strong>Part4</strong>  我们看的是主持人还是新闻</h2>
-    </div>
-     
-    <div>
-       <h2><strong>Part5</strong>  主持人出境时长占比统计</h2>
-    </div>
+   <h3><strong>我们看的是主持人还是新闻</strong></h3>
+   <div class="class1">
+      通过对比主持人在一个栏目中的出镜时间，我们发现CNN的主持人在一档栏目中出现的时间远远高于BBC。
+      这也应和了CNN的主持人在电视新闻中占据了更加主要的角色。
+      Stephen Cushion在他研究电视新闻和政治的书中也指出：
+     <blockquote>
+       “英国滚动新闻播出了更多记者的现场信息。美国更注重主持人，他们在画面中有更长的时间。”
+       <a href="https://books.google.com/books?id=5MgqBwAAQBAJ&pg=PA92&lpg=PA92#v=onepage&q&f=false">4</a>
+       <!-- 插入引用数据的图 -->
+     </blockquote>
+     <br/>
+      CNN通常以主持人命名节目，例如“Amanpour”和“Quest Means Business”。
+      透露出他们这样盈利性质的电视媒体在营销上更加依赖于主持人的“个人色彩”。
+      BBC则赋予新闻节目更多的现场感。
+      例如“Global”，“Focus on Africa”以及“Asia Business Report”。<br/>
+     <br/>
+      目前主流的新闻节目在这一个维度上寻找着各自的定位：<br/>
+     <br/>
+      CCTV-NEWS在节目定位上更加靠近BBC，但在播出手段上更加接近CNN。
+   </div>
+   
+   <h3><strong>过去、现在、还是过去</strong></h3>
+   <div class="class1">
+      我们无法简单的以收视率或者影响力作为标准，武断的认为这两种报道风格到底哪一种更好。
+      就像绕着电视新闻主播也存在着很多争议一样。<br/>
+     <br/>
+      但在“千禧代”的身上发生着一些值得关注的趋势。
+      英国Channel 4时事部门主管Dorothy Byrne在出席座谈会时表示<br/>
+     <blockquote>
+       年轻人对国际新闻感兴趣，他们更喜欢长篇的报道
+       <a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">5</a>
+     </blockquote>
+   </div>
+   
    <!--
     <div id="block1">
       <img src="http://pic000.oss-cn-beijing.aliyuncs.com/%E6%BC%94%E6%92%AD%E5%AE%A4%E9%9B%86%E5%90%88%E5%9B%BE%E7%89%87/00test.jpg" alt="图片大集合">
