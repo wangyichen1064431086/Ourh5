@@ -82,6 +82,11 @@
       font-size: 18px;
     }
 
+    h4 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
     #vp {
       margin-left: -15px;
       margin-right: -15px;
@@ -120,6 +125,19 @@
       font-weight: bold;
     }
 
+    .vp_c {
+      visibility: hidden;
+      z-index: 99999;
+    }
+
+    #vp_tp {
+      position: absolute;
+      min-width: 75%;
+      min-height: 80%;
+      top:10%;
+      left:15%;
+    }
+
     </style>
 
   </head>
@@ -144,14 +162,14 @@
         <p>虽然画面没有必要看上去统一，因为人眼的适应能力很强。但我们觉得背后的成因或许可以为CCTV-NEWS掌控播出效果提供一定的参考。</p>
 
         <div id="vp" class="carousel slide" data-ride="carousel" data-interval="4000">
-<!--
-          <ol class="carousel-indicators">
+
+          <ol class="carousel-indicators vp_c">
             <li data-target="#vp" data-slide-to="0" class="active"></li>
             <li data-target="#vp" data-slide-to="1"></li>
             <li data-target="#vp" data-slide-to="2"></li>
             <li data-target="#vp" data-slide-to="3"></li>
           </ol>
--->
+
           <div class="carousel-inner">
 
             <div class="active item" id="vp1">
@@ -168,16 +186,20 @@
               <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-night-shots.jpg" alt="bbc night shots">
             </div>
           </div>
-<!--
-          <a class="left carousel-control" href="#vp" role="button" data-slide="prev">
+
+          <a class="left carousel-control vp_c" href="#vp" role="button" data-slide="prev">
              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
              <span class="sr-only">Previous</span>
            </a>
-           <a class="right carousel-control" href="#vp" role="button" data-slide="next">
+           <a class="right carousel-control vp_c" href="#vp" role="button" data-slide="next">
              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
              <span class="sr-only">Next</span>
            </a>
--->
+
+           <div id='vp_tp'>
+
+           </div>
+
         </div>
 
         <h4 id="-">演播室里的各种拼</h4>
@@ -188,7 +210,8 @@
         <p>理论上来说一个更大的演播室，就能让摄像机有更多的运动空间。
         但真正让这一个优势得到充分发挥的却是BBC的机器人摄像机。<sup><em><a href="(http://www.bbc.co.uk/academy/technology/article/art20140313104307334)">1</a></em></sup>
         从演播室画面的动态感来看，BBC超出CNN和CCTV-NEWS不少距离。
-        <!-- 插入运动镜头统计图 --></p>
+        </p>
+        <img src="http://pic000.oss-cn-beijing.aliyuncs.com/movshots.jpg" alt="moving shots">
         <p>CNN对演播室的设计却突显示出“去中心”化的理念。
         在2012年为美国大选翻新演播室时，他们将两个演播室组合在了一起。
         按照他们自己的话说。</p>
@@ -220,7 +243,8 @@
         </blockquote>
         <p>从命名上也能看出，CNN通常以主持人命名节目，例如“Amanpour”和“Quest Means Business”。或是出于美国受众长期的习惯，CNN这样盈利性质的电视媒体在营销上更加依赖于主持人的“个人色彩”。
         而BBC则赋予了新闻节目更多的现场感。例如“Global”，“Focus on Africa”以及“Asia Business Report”。CCTV-NEWS在节目定位上更加靠近BBC，但在播出手段上更加接近CNN。
-        <!-- 插入数据图表 --></p>
+        </p>
+        <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.jpg" alt="anchor time">
         <h4 id="-">新闻报道的改变或才刚开始</h4>
         <p>电视作为影响力最大的媒介，新闻主播也受到了很多争议。
         一些人把他们视作与观众建立信任的关键途径。
@@ -243,6 +267,19 @@
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script>
+
+    $('#vp_tp').click(function(){
+      var state = $('.vp_c').css('visibility');
+      if (state == 'hidden') {
+        $('#vp').carousel('pause');
+        $('.vp_c').css('visibility','visible')
+      }
+      if (state == 'visible') {
+        $('#vp').carousel('cycle');
+        $('.vp_c').css('visibility','hidden')
+      }
+    })
+
     $('#vp').append('<div id="caption"><div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div></div>')
     $('#vp').on('slid.bs.carousel', function (e) {
       var cp = e.relatedTarget.id
@@ -259,6 +296,7 @@
         $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>画面色彩曝光准确</div>')
       }
     })
+
     </script>
   </body>
 </html>
