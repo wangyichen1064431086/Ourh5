@@ -151,7 +151,25 @@
       width:100%
       /*min-width: 100%;*/
     }
-
+    
+    #Stephen
+    {
+      /*background: yellow;*/
+      color: blue;
+    }
+    
+    #intro {
+      position:absolute;
+      background: gray;
+      opacity: 0.85;
+      width:250px;
+      height:50px;
+      z-index:99;
+      padding: 5px;
+      color: #FFFFFF;
+      visibility: hidden;
+      font-size: 15px;
+  }
     </style>
 
   </head>
@@ -256,10 +274,19 @@
 
 
         <h4>我们看的是主持人还是新闻</h4>
-        <p>通过对比各台主持人在节目中的出镜时间，我们发现CNN主持人的占比普遍高于BBC和CCTV-NEWS。
-        这也应和了Stephen Cushion (Director of MA Political Communication,Cardiff University,UK) 的抽样调查数据。
-        他在《News and Politics》中指出，英国的滚动新闻节目播出了更多的记者的现场，而美国更注重主持人。
-        <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup></p>
+        <p>
+          通过对比各台主持人在节目中的出镜时间，我们发现CNN主持人的占比普遍高于BBC和CCTV-NEWS。
+          这也应和了
+          <span id="Stephen">
+            <u>Stephen Cushion</u>
+          </span>
+          <span id="intro">
+          Director of MA Political Communication,Cardiff University,UK
+          </span>
+          的抽样调查数据。
+          他在《News and Politics》中指出，英国的滚动新闻节目播出了更多的记者的现场，而美国更注重主持人。
+          <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup>
+        </p>
         <p>出于美国受众长期的习惯，CNN在节目推广上也依赖于主持人的“个人色彩”。
         他们通常以主持人命名节目，例如 “Amanpour” 和 “The World Right Now with Hala Gorani” 。
         而BBC则赋予了新闻节目更多的现场感。例如 “Global” ， “Focus on Africa” 以及 “Asia Business Report” 。
@@ -315,6 +342,27 @@
         $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>画面色彩曝光准确</div>')
       }
     })
+    
+    
+    /*var X=$('#Stephen').positon().left;
+    var Y=$('#Stephen').positon().top;
+    $('#intro').css('left',X);
+    $('#intro').css('top',Y);*/
+       
+       
+    $('#Stephen').click(function(){
+       var state1 =$('#intro').css('visibility');
+       if (state1=='hidden')
+       {
+           $('#intro').css('visibility','visible');
+       }
+      else if (state1=='visible')
+      {
+           $('#intro').css('visibility','hidden');//code
+       }
+   })
+    
+     
 
     </script>
   </body>
