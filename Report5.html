@@ -151,19 +151,17 @@
       width:100%
       /*min-width: 100%;*/
     }
-    
+
     #Stephen
     {
       /*background: yellow;*/
       color: blue;
     }
-    
-    #intro {
+
+    #step_bio {
       position:absolute;
       background: gray;
       opacity: 0.85;
-      width:250px;
-      height:50px;
       z-index:99;
       padding: 5px;
       color: #FFFFFF;
@@ -280,8 +278,10 @@
           <span id="Stephen">
             <u>Stephen Cushion</u>
           </span>
-          <span id="intro">
-          Director of MA Political Communication,Cardiff University,UK
+          <span id="step_bio">
+            Director of MA Political Communication,
+            <br>Cardiff University,
+            <br>UK
           </span>
           的抽样调查数据。
           他在《News and Politics》中指出，英国的滚动新闻节目播出了更多的记者的现场，而美国更注重主持人。
@@ -291,8 +291,9 @@
         他们通常以主持人命名节目，例如 “Amanpour” 和 “The World Right Now with Hala Gorani” 。
         而BBC则赋予了新闻节目更多的现场感。例如 “Global” ， “Focus on Africa” 以及 “Asia Business Report” 。
         CCTV-NEWS在节目定位上更加靠近BBC，但在播出手段上更加接近CNN。</p>
-        <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.jpg" alt="anchor time">
-
+        <div class="media_c">
+          <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.png" alt="anchor time">
+        </div>
         <h4>新闻报道的改变或才刚开始</h4>
         <p>我们无法简单的以收视率或者影响力作为标准，判断“美式”报道和“英式”报道哪一种更好。
         有节目把主持人视作与观众建立信任的关键途径。
@@ -342,27 +343,37 @@
         $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>画面色彩曝光准确</div>')
       }
     })
-    
-    
+
+
     /*var X=$('#Stephen').positon().left;
     var Y=$('#Stephen').positon().top;
-    $('#intro').css('left',X);
-    $('#intro').css('top',Y);*/
-       
-       
+    $('#step_bio').css('left',X);
+    $('#step_bio').css('top',Y);*/
+
+
     $('#Stephen').click(function(){
-       var state1 =$('#intro').css('visibility');
-       if (state1=='hidden')
+       var state =$('#step_bio').css('visibility');
+       if (state=='hidden')
        {
-           $('#intro').css('visibility','visible');
+           $('#step_bio').css('visibility','visible');
        }
-      else if (state1=='visible')
+      if (state=='visible')
       {
-           $('#intro').css('visibility','hidden');//code
+           $('#step_bio').css('visibility','hidden');//code
        }
-   })
-    
-     
+    })
+
+    $('#step_bio').click(function(){
+      var state =$('#step_bio').css('visibility');
+      if (state=='hidden')
+      {
+          $('#step_bio').css('visibility','visible');
+      }
+      if (state=='visible')
+      {
+           $('#step_bio').css('visibility','hidden');//code
+       }
+    })
 
     </script>
   </body>
