@@ -28,50 +28,6 @@
     -->
 
     <style type="text/css">
-    /*
-        * {
-         padding:0;
-         margin:0;
-        }
-        h1{
-         text-align: center;
-        }
-        h2{
-        margin: 15px;
-        }
-        h3{
-          margin: 15px;
-        }
-        .class1{
-         text-align: left;
-         margin:15px;
-         font-size: 18px;
-        }
-        ul{
-          margin: 15px;
-        }
-        img{
-            width:100%;
-        }
-        .class2{
-            border:10px groove #8B4513;
-        }
-        .class3{
-            margin: 1px;
-        }
-        #block1{
-            padding:20px;
-        }
-        .class4{
-            border:15px solid #556B2F;
-        }
-        #sec1{
-            background-color: #FFFFFF;
-        }
-        #block2{
-          padding: 20px 150px 20px 150px;
-        }
-    */
 
     body {
       padding-left: 15px;
@@ -116,7 +72,6 @@
       z-index:9999;
       text-align: center;
       color: #bbbbbb;
-      /*line-height:25px;*/
       vertical-align: middle;
       font-size: 12px;
     }
@@ -173,6 +128,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-12">
+
         <h2>我们和电脑一起看电视</h2>
         <p>目前主流媒体平台依赖文字标注对新闻进行分类。
         但面对电视台大量实时画面时，人工标注变得比较困难。
@@ -187,7 +143,7 @@
         因为不难发现，CCTV-NEWS的有些画面显得不够专业。
         例如演播室背景设计偏暗；后期未修正画面白平衡等等。</p>
 
-        <div id="vp" class="carousel slide" data-ride="carousel" data-interval="4000">
+        <div id="vp" class="carousel slide" data-ride="carousel" data-interval="3500">
 
           <ol class="carousel-indicators vp_c">
             <li data-target="#vp" data-slide-to="0" class="active"></li>
@@ -201,6 +157,7 @@
             <div class="active item" id="vp1">
               <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-b-i.jpg" alt="cctv brightness impression">
             </div>
+
             <div class="item" id="vp2">
               <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-b-i.jpg" alt="bbc brightness impression">
             </div>
@@ -208,9 +165,11 @@
             <div class="item" id="vp3">
               <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-night-shots.jpg" alt="cctv night shots">
             </div>
+
             <div class="item" id="vp4">
               <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-night-shots.jpg" alt="bbc night shots">
             </div>
+
           </div>
 
           <a class="left carousel-control vp_c" href="#vp" role="button" data-slide="prev">
@@ -222,6 +181,7 @@
              <span class="sr-only">Next</span>
            </a>
 
+           <!-- toggle play -->
            <div id='vp_tp'>
 
            </div>
@@ -268,16 +228,18 @@
 
         <h4>我们看的是主持人还是新闻</h4>
         <p>
-          通过对比，我们发现CNN主持人在新闻节目中的出镜时间普遍高于BBC和CCTV-NEWS。
-          这也应和了<span id="stephen"><u>Stephen Cushion</u></span>的研究数据。
-          他在《News and Politics》中指出，英国的滚动新闻节目播出了更多在现场的记者，而美国更注重主持人。
-          <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup>
+        通过对比，我们发现CNN主持人在新闻节目中的出镜时间普遍高于BBC和CCTV-NEWS。
+        这也应和了<span id="stephen"><u>Stephen Cushion</u></span>的研究数据。
+        他在《News and Politics》中指出，英国的滚动新闻节目播出了更多在现场的记者，而美国更注重主持人。
+        <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup>
         </p>
         <p>出于美国受众长期的习惯，CNN在节目推广上也依赖于主持人的“个人色彩”。
         他们通常以主持人命名节目，例如“Amanpour”和“World News with Hala Gorani”。
         而BBC则倾向赋予节目名称更多的现场感，例如“Global”，“Focus on Africa”以及“Asia Business Report”。
         CCTV-NEWS虽然在节目定位上是走BBC的路线，但在播出手段上更加接近CNN。</p>
+
         <div class="media_c">
+          <p style="text-align:right;padding-right:15px;font-size:14px">各频道主持人出镜比例</p>
           <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.png" alt="anchor time">
         </div>
 
@@ -288,7 +250,7 @@
         <p>从目前的趋势来看，摄像机镜头的焦点正从主持人身上回归到新闻现场。
         但3分钟左右的新闻报道正处在一个尴尬的境地。
         无法比twitter快速，也没有足够的篇幅报道复杂的国际事件。
-        Vice News借助9到20分钟左右的深度现场报道赢得了默多克7千万美元的投资，估值14亿美元；<sup><em><a href="http://www.forbes.com/sites/jeffbercovici/2013/08/19/thanks-to-rupert-murdoch-vice-is-worth-1-4-billion-could-it-be-in-play-soon/">5</a></em></sup> 并通过与HBO的长期合作，登陆了有线电视。</p>
+        Vice News借助9到20分钟左右的深度现场报道赢得了默多克7千万美元的投资，估值14亿美元；<sup><em><a href="http://www.forbes.com/sites/jeffbercovici/2013/08/19/thanks-to-rupert-murdoch-vice-is-worth-1-4-billion-could-it-be-in-play-soon/">5</a></em></sup> 并通过与HBO的长期合作，登陆了有线电视。
         他们深入伊斯兰国内部的深度报道，仅仅在YouTube上就已播出7百万次。
         </p>
 
@@ -339,7 +301,6 @@
       $("#step_modal").modal()
     })
 
-
     </script>
 
     <!-- Modal -->
@@ -372,7 +333,6 @@
                 </p>
               </div>
             </div>
-
 
           </div>
           <!--
