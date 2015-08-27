@@ -172,7 +172,6 @@
           <div class="col-xs-1 col-sm-1">
             <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
           </div>
-          </div>
         </div>
       
         <hr>
@@ -182,7 +181,41 @@
         但面对电视台大量实时画面时，人工标注变得比较困难。
         因此，我们尝试着利用人脸识别技术对BBC、CCTV-NEWS和CNN三个频道进行定义，试图提高对电视新闻的检索速度。
         在这个过程当中，我们教会了计算机如何准确地“认”人，计算机也让我们从另一个角度看了一次电视。</p>
-
+        <p>简单来说，人脸识别技术要解决的问题就是：有一张照片上有个人，这个人大家都不知道也懒得去思考是谁，希望计算机能告诉大家他是谁。
+        那么，计算机是怎样得出它的答案的呢？<br>
+         
+        计算机的解答过程大致可以分为三步：<br>
+        第一步，先看看这个画面中是否有人脸；
+        第二步，如果有张脸，看看脸上的眼镜有多大，眼距有多宽，鼻子长在哪；
+        第三步，将这张脸的眼睛鼻子的特点和已有的知道是谁的人脸的特点进行比较，如果二者的特点相似到一定程度，就可以认为这就是那个人的脸。<br>
+        
+        在这个解答过程中间，计算机有许多工具可以选择，其中一个比较好的工具就是[人工神经网络]。<br>
+        </p>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default" id="pull">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                  href="#collapseOne">
+                  <p>点击这里了解更多有关神经网络的知识，再次点击这里折叠。</p>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse "> <!--class属性中添加in即可首次展现折叠部分-->
+              <div class="panel-body">
+                <p>比如说，我们现在有十张范冰冰的照片，另外还有一张不知道是谁的美女照片，[人工神经网络]就可以分析出这个美女是不是范冰冰。
+                首先，它先随机指定一组数据作为最标准的美女脸规范。
+                然后，它拿出其中一张范冰冰的照片，把她的眼睛大小、鼻子位置等数据进行若干次变换，使变换后的数据尽量接近标准脸数据。
+                接着，它再拿出另外一张范冰冰的照片，修改上述变换规则，使这两张照片的数据在变换后都能尽量接近标准脸数据。
+                这样，它不断地拿出新一张范冰冰的照片，不断地修改变换规则，最终可以使这十张照片的数据在变换后都能非常接近标准脸数据。
+                这时，它就得到了最优的变换规则。
+                下面，它只需拿出那张不知道是谁的美女照片，按照该规则进行数据变换，得出的结果如果接近标准脸数据，那么她就是范冰冰；否则，她就不是范冰冰。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <h4>光是最基本的元素</h4>
         <p>当一个小时的视频被展开之后，我们首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
         经计算后发现，CCTV-NEWS每小时亮度的平方差比BBC高出4.34%；比CNN高出6.69%。</p>
@@ -319,7 +352,7 @@
     $("#circle1").click(function(){
       var model = $("body").css('background-color');
       if (model =="rgb(255, 255, 255)") {
-        $("body,#circle2,.modal-content").css('background-color','rgb(50, 50, 50)');
+        $("body,#circle2,.modal-content,#pull,.panel-heading").css('background-color','rgb(50, 50, 50)');
         $("#circle1,#sample2").css('background-color','rgb(255, 255, 255)');
         $("p,#big,#small,h2,h4").css('color','rgb(255, 255, 255)');
       }
