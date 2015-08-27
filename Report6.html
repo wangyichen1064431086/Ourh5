@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>我们和电脑一起看电视</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap-glyphicons/1.0/css/bootstrap-glyphicons.css">
+    <!--
+    <link rel="stylesheet" href="./bootstrap-dashboard.css">
+    -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- event drop charts dependency
+    <script src="./d3.min.js"></script>
+    <script src="./event-drops.js"></script>
+    <link rel="stylesheet" href="./event-drops.css">
+    -->
+
+    <style type="text/css">
+
+    body {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    h2 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    h4 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #vp {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    img {
+      width:100%
+    }
+
+    #caption {
+      position: absolute;
+      background-color: black;
+      opacity: 0.8;
+      top: 55%;
+      right: 3%;
+      width:175px;
+      height:75px;
+      z-index:99;
+      text-align: center;
+      color: #bbbbbb;
+      vertical-align: middle;
+      font-size: 12px;
+    }
+
+    .cap {
+      text-align: right;
+      margin-top: 15px;
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    .cap_t {
+      opacity: 0.5;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .vp_c {
+      visibility: hidden;
+      z-index: 99999;
+    }
+
+    #vp_tp {
+      position: absolute;
+      min-width: 75%;
+      min-height: 80%;
+      top:10%;
+      left:15%;
+    }
+
+    .media_c {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    #vid {
+      width:100%
+      /*min-width: 100%;*/
+    }
+
+    #stephen
+    {
+      /*background: yellow;*/
+      color: blue;
+    }
+    #sample1{
+      color: blue;
+    }
+    .zup{
+      z-index: 100;
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+
+        <h2>我们和电脑一起看电视</h2>
+        <p>目前主流媒体平台依赖文字标注对新闻进行分类。
+        但面对电视台大量实时画面时，人工标注变得比较困难。
+        因此，我们尝试着利用人脸识别技术对BBC、CCTV-NEWS和CNN三个频道进行定义，试图提高对电视新闻的检索速度。
+        在这个过程当中，我们教会了计算机如何准确地“认”人，计算机也让我们从另一个角度看了一次电视。</p>
+
+        <h4>光是最基本的元素</h4>
+        <p>当一个小时的视频被展开之后，我们首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
+        经计算后发现，CCTV-NEWS每小时亮度的平方差比BBC高出4.34%；比CNN高出6.69%。</p>
+        <p>虽然这听上去感觉并不是特别重要，而且追求一个所谓“统一”的感觉似乎也没有太大意义。
+        但我们认为这个数据反映的是CCTV-NEWS对播出效果的掌控不足。
+        因为不难发现，CCTV-NEWS的有些画面显得不够专业。
+        例如演播室背景设计偏暗；后期未修正画面白平衡等等。</p>
+
+        <div id="vp" class="carousel slide" data-ride="carousel" data-interval="3500">
+
+          <ol class="carousel-indicators vp_c">
+            <li data-target="#vp" data-slide-to="0" class="active"></li>
+            <li data-target="#vp" data-slide-to="1"></li>
+            <li data-target="#vp" data-slide-to="2"></li>
+            <li data-target="#vp" data-slide-to="3"></li>
+          </ol>
+
+          <div class="carousel-inner">
+
+            <div class="active item" id="vp1">
+              <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-b-i.jpg" alt="cctv brightness impression">
+            </div>
+
+            <div class="item" id="vp2">
+              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-b-i.jpg" alt="bbc brightness impression">
+            </div>
+
+            <div class="item" id="vp3">
+              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-night-shots.jpg" alt="cctv night shots">
+            </div>
+
+            <div class="item" id="vp4">
+              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-night-shots.jpg" alt="bbc night shots">
+            </div>
+
+          </div>
+
+          <a class="left carousel-control vp_c" href="#vp" role="button" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+             <span class="sr-only">Previous</span>
+           </a>
+           <a class="right carousel-control vp_c" href="#vp" role="button" data-slide="next">
+             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+             <span class="sr-only">Next</span>
+           </a>
+
+           <!-- toggle play -->
+           <div id='vp_tp'>
+
+           </div>
+
+        </div>
+
+        <h4>演播室里的各种拼</h4>
+        <p>作为电视媒体的门面，演播室是各家暗中比拼的视觉载体。
+        BBC、CCTV和CNN都使用着数量相当的演播室。
+        但近期搬进了新大楼的BBC和CCTV-NEWS在硬件上实力稍强。</p>
+        <p>从演播室画面的动态感来看，BBC以<span id="sample1">27.23%</span>的动态镜头超出CNN（13.51%）和CCTV-NEWS（11.51%）不少距离。
+        这主要是因为BBC拥有一个面积更大的演播室和数台高自动化的机器人摄像机。
+        <sup><em><a href="(http://www.bbc.co.uk/academy/technology/article/art20140313104307334)">1</a></em></sup></p>
+
+        <div class="media_c">
+
+          <video id="vid" src="http://pic000.oss-cn-beijing.aliyuncs.com/robocam.mp4" poster="http://pic000.oss-cn-beijing.aliyuncs.com/robocam_poster.JPG">
+          </video>
+
+        </div>
+
+        <p>而CNN对演播室的设计却突显着“去中心”化的理念。
+        他们在2012年美国大选之时，特意翻新了演播室。
+        按照CNN自己的话说：</p>
+        <blockquote>
+        <p>这个演播室没有一个真正意义上的主播桌。这里将会充满对话，和各种用来讲故事的技术。</p>
+        </blockquote>
+        <p>这也主导着CNN对新闻报道的呈现—
+        淡化线性的叙述方式，突出多角度的解读。
+        为此CNN也在创造出更多的出镜场景上花了不少功夫，试图以不同的报道环境暗示不同的角度。</p>
+        <p>比如，他们会利用道具、景深和拍摄角度制造出不同的空间感以及
+        使用退役的新闻间做背景等等。
+        <sup><em><a href="http://www.newscaststudio.com/2012/01/09/cnn-finally-begins-using-newsroom-for-newsroom/">2</a></em></sup></p>
+
+        <div class="media_c">
+          <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/newstream.JPG" alt="news stream">
+        </div>
+        <!-- 插图 -->
+        <!-- 插图:
+          cnn-20150717201305.jpeg
+          cnn-20150717192155.jpeg
+        -->
+        <p>但正如下文要指出的，CNN在表面上突出“多角度”的报道可能仅仅是演绎新闻的手段。</p>
+
+        <h4>我们看的是主持人还是新闻</h4>
+        <p>
+        通过对比，我们发现CNN主持人在新闻节目中的出镜时间普遍高于BBC和CCTV-NEWS。
+        这也应和了<span id="stephen"><u>Stephen Cushion</u></span>的研究数据。
+        他在《News and Politics》中指出，英国的滚动新闻节目播出了更多在现场的记者，而美国更注重主持人。
+        <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup>
+        </p>
+        <p>出于美国受众长期的习惯，CNN在节目推广上也依赖于主持人的“个人色彩”。
+        他们通常以主持人命名节目，例如“Amanpour”和“World News with Hala Gorani”。
+        而BBC则倾向赋予节目名称更多的现场感，例如“Global”，“Focus on Africa”以及“Asia Business Report”。
+        CCTV-NEWS虽然在节目定位上是走BBC的路线，但在播出手段上更加接近CNN。</p>
+
+        <div class="media_c" id="sample2">
+          <p style="text-align:right;padding-right:15px;font-size:14px">各频道主持人出镜比例</p>
+          <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.png" alt="anchor time">
+        </div>
+
+        <h4>新闻报道的改变或才刚开始</h4>
+        <p>我们无法简单地以收视率或影响力作为标准，判断“美式”报道和“英式”报道哪一种更好。
+        有节目把主持人视作与观众建立信任的关键途径；
+        也有节目将主持人的角色淡化。</p>
+        <p>从目前的趋势来看，摄像机镜头的焦点正从主持人身上回归到新闻现场。
+        但3分钟左右的新闻报道正处在一个尴尬的境地。
+        无法比twitter快速，也没有足够的篇幅报道复杂的国际事件。
+        Vice News借助9到20分钟左右的深度现场报道赢得了默多克7千万美元的投资，估值14亿美元；<sup><em><a href="http://www.forbes.com/sites/jeffbercovici/2013/08/19/thanks-to-rupert-murdoch-vice-is-worth-1-4-billion-could-it-be-in-play-soon/">5</a></em></sup> 并通过与HBO的长期合作，登陆了有线电视。
+        他们深入伊斯兰国内部的深度报道，仅仅在YouTube上就已播出7百万次。
+        </p>
+
+        <p>
+        英国Channel 4时事部门主管Dorothy Byrne称年轻人对他国的新闻感兴趣，而且更加喜爱长篇报道。<sup><em><a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">4</a></em></sup>
+        随着他们的成长，在社会中拥有更多的筹码，“千禧代”将会更加关注央行加息、养老金政策改革等话题。
+        那时电视新闻是否会因他们的偏好而改变？或许只有时间才能告诉我们答案。</p>
+        <hr>
+
+      </div>
+    </div>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script>
+
+    $('#vp_tp').click(function(){
+      var state = $('.vp_c').css('visibility');
+      if (state == 'hidden') {
+        $('#vp').carousel('pause');
+        $('.vp_c').css('visibility','visible')
+      }
+      if (state == 'visible') {
+        $('#vp').carousel('cycle');
+        $('.vp_c').css('visibility','hidden')
+      }
+    })
+
+    $('#vp').append('<div id="caption"><div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div></div>')
+    $('#vp').on('slid.bs.carousel', function (e) {
+      var cp = e.relatedTarget.id
+      if (cp == "vp1") {
+        $('#caption').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div>')
+      }
+      if (cp == "vp2") {
+        $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>HardTalk背景设计</div>')
+      }
+      if (cp == "vp3") {
+        $('#caption').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span><br>晚间画面有明显色偏</div>')
+      }
+      if (cp == "vp4") {
+        $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>画面色彩曝光准确</div>')
+      }
+    })
+
+    $('#stephen').click(function(){
+      $("#step_modal").modal()
+    })
+    
+    $('#sample1').click(function(){
+      $("#explain1").modal()
+    })
+    
+    $('#sample2').click(function(){
+      $("#explain2").modal()
+    })
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="step_modal" tabindex="-1" role="dialog" aria-labelledby="step_bio">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content zup">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="step_bio">Stephen Cushion</h4>
+          </div>
+          <div class="modal-body">
+            <div class="media">
+              <div class="media-top">
+                <a href="#">
+                  <img class="media-object" src="http://pic000.oss-cn-beijing.aliyuncs.com/Cushion-Stephen-prt.jpg" alt="Stephen Cushion">
+                </a>
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><strong>Director of MA Political Communication</strong></p>
+                <p class="media-heading"><span style="font-size:14px">Cardiff University School of Journalism, Media and Cultural Studies</span></p>
+                <p style="font-size:14px"><strong>Recent/Future Publications</strong></p>
+                <p style="font-size:14px">Cushion, Stephen (2015) <a href="http://www.routledge.com/books/details/9780415744713/"><em>The Rise of Live and Interpretive Journalism</em></a>. London: Routledge</p>
+                <p style="font-size:14px">Cushion,&nbsp;Stephen, Lewis,&nbsp;Rachel and Rodger,&nbsp;Hugh (2015)&nbsp;<a href="http://orca.cf.ac.uk/63992/">Adopting or resisting 24-hour news logic on evening bulletins? the mediatization of UK television news 1991-2012</a>.&nbsp;<em>Journalism</em>&nbsp;</p>
+                <p style="font-size:14px">Cushion, Stephen, Richard Thomas and Oliver Ellis (2015) ‘Interpreting UKIP’s “earthquake” in British politics: UK television news coverage of the 2009 and 2014 EU election campaigns’ in <em>Political Quarterly</em> (accepted)<br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="explain1" tabindex="-1" role="dialog" aria-labelledby="step_bio">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="step_bio">抽样方法说明</h4>
+          </div>
+          <div class="modal-body">
+            <p style="font-size: 14px">
+            本研究采用先整群抽样再系统抽样的方法抽取研究样本。<br>
+            首先，由于研究对象为20150713~20150719这七天BBC、CNN、CCTV-NEWS所有的视频截图，故可将总体看做是这七个互不交叉、互不重合的群；又由于电视台编排新闻节目通常以天为单位，故这七个群群间差异小，群内差异大（即不同时段的内容差异大），符合整群抽样的条件。这样就可以采用整群抽样的方法从这七天中随机抽取一天作为研究对象。在这里，我们随机选择了20150715这一天。<br>
+            其次，由于一天中的数据量依然较大，故还需要再次对20150715这一天的总体进行抽样；又由于其数据按照时间已经自然地有了编号（即0点~1点的数据编号为2015071500,1点~2点的数据编号为2015071511），符合系统抽样的条件，且方便进行系统抽样。这样，就可以采用系统抽样的方法随机选择一个时间段作为起点，再等时间间隔地抽取一定数量的时间段。在这里，我们认为4个时间段的样本量已经足够，故选择了00,06,12,18四个时间段。<br>
+            综上，我们最终抽取的样本为20150715这天BBC、CNN、CCTV-NEWS在00,06,12,18四个时间段的节目截图数据。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="explain2" tabindex="-1" role="dialog" aria-labelledby="step_bio">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="step_bio">抽样方法说明</h4>
+          </div>
+          <div class="modal-body">
+            <p style="font-size: 14px">
+            本研究选取与主持人关系较紧密的节目作为研究样本。<br>
+            Connect The World 是CNN的一档国际新闻节目，其栏目全称为Connect The World with Becky Anderson，由Becky Anderson主持，	且带有较浓厚的Becky Anderson个人色彩。故选择Connect The World作为本研究中CNN的代表性节目。其播出时间为每周一至周五的0:00左右。<br>
+            GMT是BBC World News下的一档新闻栏目，又叫做GMT with George Alagiah，主播原为George Alagiah，也带有较浓厚的主持人个人色彩。故选择Connect The World作为本研究中BBC代表性节目。George Alagiah近年因健康原因离开了GMT, GMT目前的主持人为Stephen Sackur、Lucky Hockings等人，其播出时间为每周一至周五的20:00。<br>
+            CCTV-NEWS并无像BBC和CNN那样直接以主持人命名的节目，但也有一些节目因主持人较固定而与主持人形成了较紧密的关系。其中，NEWS HOUR是CCTV-NEWS主要的一档新闻公告栏目，拥有两位固定主持人——Li Dongning和Pan Deng。其播出时间为每周一至周日的12:00。China 24是CCTV-NEWS的一档向世界介绍中国的新闻栏目，拥有一位固定主持人——Zou Yue。其播出时间为每周一至周日的20:15。在本研究中，选择NEWS HOUR和China 24作为CCTV-NEWS的代表性节目。另外，由于CCTV-NEWS设有美洲分台，为使所选样本更全面，故另选美洲分台的NEWS DESK作为补充。美洲分台的NEWS DESK拥有固定主持人Susan Roberts、Asieh Namdar等人，在每周一至周日都有多个时间段播出。<br>
+            为了统一抽样样本的时间，由于以上5档栏目都在周一至周五有播出，故所有栏目的样本都在周一至周五的时间段中抽取；又由于每个栏目研究3个时间段的样本量就已经足够，故按照系统抽样的思想等距抽出三天时间——周一、周三、周五，即0713、0715、0717。这样，以上5档栏目的样本分别为0713、0715、0717所对应播出的时间段。由于CCTV-NEWS美洲分台的NEWS DESK在多个时间段都有播出，故随机选择6:00的节目作为研究样本。<br>
+            综上，我们最终抽取的样本为0713、0715、0717三天每天CNN在00:00的Connect The World，BBC在20:00的GMT，CCTV-NEWS在12:00的NEWS HOUR、20：00的China 24，以及CCTV-NEWS美洲分台在6:00的NEWS DESK。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
