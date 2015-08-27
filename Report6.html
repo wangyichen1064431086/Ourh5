@@ -125,15 +125,55 @@
     .zup{
       z-index: 100;
     }
+    #circle1{
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: black;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+    }
+    #circle2{
+      position: absolute;
+      left: 30%;
+      bottom: 25%;
+      width: 14px;
+      height: 14px;
+      background:rgb( 255, 255, 255);
+      -moz-border-radius: 7px;
+      -webkit-border-radius: 7px;
+      border-radius: 7px;
+    }
     </style>
 
   </head>
 
   <body>
-
+    
     <div class="row">
       <div class="col-xs-12 col-sm-12">
-
+        
+        <br>
+          
+        <div class="row">
+          <div class="col-xs-8 col-sm-8"> </div>
+          <div class="col-xs-1 col-sm-1">
+            <div id="circle1">
+              <div id="circle2"></div>
+            </div>
+          </div>
+          <div class="col-xs-1 col-sm-1">
+            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+          </div>
+          <div class="col-xs-1 col-sm-1">
+            <span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
+          </div>
+          </div>
+        </div>
+        
+        <hr>
+          
         <h2>我们和电脑一起看电视</h2>
         <p>目前主流媒体平台依赖文字标注对新闻进行分类。
         但面对电视台大量实时画面时，人工标注变得比较困难。
