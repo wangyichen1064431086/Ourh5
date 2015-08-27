@@ -164,10 +164,10 @@
             </div>
           </div>
           <div class="col-xs-1 col-sm-1">
-            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big"></span>
           </div>
           <div class="col-xs-1 col-sm-1">
-            <span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
           </div>
           </div>
         </div>
@@ -299,7 +299,7 @@
         他们深入伊斯兰国内部的深度报道，仅仅在YouTube上就已播出7百万次。
         </p>
 
-        <p>
+        <p id="test">
         英国Channel 4时事部门主管Dorothy Byrne称年轻人对他国的新闻感兴趣，而且更加喜爱长篇报道。<sup><em><a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">4</a></em></sup>
         随着他们的成长，在社会中拥有更多的筹码，“千禧代”将会更加关注央行加息、养老金政策改革等话题。
         那时电视新闻是否会因他们的偏好而改变？或许只有时间才能告诉我们答案。</p>
@@ -312,7 +312,20 @@
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script>
-
+    $("#big").click(function(){
+      var wordsize = parseInt($("p").css('font-size'));
+      if (wordsize<24) {
+         $("p").css('font-size',wordsize+1);//code
+      }
+    })
+    
+    $("#small").click(function(){
+      var wordsize = parseInt($("p").css('font-size'));
+      if (wordsize>16) {
+         $("p").css('font-size',wordsize-1);//code
+      }
+    })
+    
     $('#vp_tp').click(function(){
       var state = $('.vp_c').css('visibility');
       if (state == 'hidden') {
