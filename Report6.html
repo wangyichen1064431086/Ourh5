@@ -129,7 +129,7 @@
       position: absolute;
       width: 16px;
       height: 16px;
-      background: black;
+      background: rgb(50, 50, 50);
       -moz-border-radius: 8px;
       -webkit-border-radius: 8px;
       border-radius: 8px;
@@ -140,10 +140,13 @@
       bottom: 25%;
       width: 14px;
       height: 14px;
-      background:rgb( 255, 255, 255);
+      background:rgb(255, 255, 255);
       -moz-border-radius: 7px;
       -webkit-border-radius: 7px;
       border-radius: 7px;
+    }
+    body{
+      background-color: rgb(255, 255, 255);
     }
     </style>
 
@@ -171,7 +174,7 @@
           </div>
           </div>
         </div>
-        
+      
         <hr>
           
         <h2>我们和电脑一起看电视</h2>
@@ -312,6 +315,21 @@
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script>
+      
+    $("#circle1").click(function(){
+      var model = $("body").css('background-color');
+      if (model =="rgb(255, 255, 255)") {
+        $("body,#circle2,.modal-content").css('background-color','rgb(50, 50, 50)');
+        $("#circle1,#sample2").css('background-color','rgb(255, 255, 255)');
+        $("p,#big,#small,h2,h4").css('color','rgb(255, 255, 255)');
+      }
+      if (model =="rgb(50, 50, 50)") {
+        $("body,#circle2,.modal-content").css('background-color','rgb(255, 255, 255)');
+        $("#circle1").css('background-color','rgb(50, 50, 50)');
+        $("p,#big,#small,h2,h4").css('color','rgb(50, 50, 50)');
+      }
+    })
+    
     $("#big").click(function(){
       var wordsize = parseInt($("p").css('font-size'));
       if (wordsize<24) {
