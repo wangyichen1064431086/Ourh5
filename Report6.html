@@ -147,35 +147,66 @@
     }
     body{
       background-color: rgb(255, 255, 255);
+      padding-top: 50px;
+    }
+    #headpart{
+      padding-top: 5px;
+    }
+    /*#navbar_example{
+      margin-top: 50px;
+    }*/
+    
+    ul.nav>li{
+      width: 25%;
+      /*border: solid 1px black;*/
+    }
+    ul.nav{
+      background-color: rgb(200, 200, 200);
     }
     </style>
 
   </head>
 
-  <body>
+  <body  data-spy="scroll" data-target="#navbar-example">
     
     <div class="row">
       <div class="col-xs-12 col-sm-12">
         
-        <br>
-          
-        <div class="row">
-          <div class="col-xs-8 col-sm-8"> </div>
-          <div class="col-xs-1 col-sm-1">
-            <div id="circle1">
-              <div id="circle2"></div>
+        
+        
+      <nav class="navbar-default navbar-fixed-top">
+        
+        <div id="headpart">
+          <div class="row">
+            <div class="col-xs-8 col-sm-8"></div>
+            <div class="col-xs-1 col-sm-1">
+              <div id="circle1">
+                <div id="circle2"></div>
+              </div>
+            </div>
+            <div class="col-xs-1 col-sm-1 ">
+              <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big"></span>
+            </div>
+            <div class="col-xs-1 col-sm-1">
+              <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
             </div>
           </div>
-          <div class="col-xs-1 col-sm-1">
-            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big"></span>
-          </div>
-          <div class="col-xs-1 col-sm-1">
-            <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
-          </div>
         </div>
+        
+        <div id="navbar-example">
+          <ul class="nav nav-tabs"  role="tablist">
+     
+              <li role="presentation" class="active "><a href="#part1">Part1</a></li>
+              <li role="presentation"><a href="#part2">Part2</a></li>
+              <li role="presentation"><a href="#part3">Part3</a></li>
+              <li role="presentation"><a href="#part4">Part4</a></li>
+
+          </ul>
+        </div>
+   
+      </nav>
       
-        <hr>
-          
+      <div id="part1">   
         <h2>我们和电脑一起看电视</h2>
         <p>目前主流媒体平台依赖文字标注对新闻进行分类。
         但面对电视台大量实时画面时，人工标注变得比较困难。
@@ -197,13 +228,13 @@
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" 
                   href="#collapseOne">
-                  <p>点击这里了解更多有关神经网络的知识，再次点击这里折叠。</p>
+                  <p style="font-size: 14px">点此了解更多神经网络知识，再次点击折叠</p>
                 </a>
               </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse "> <!--class属性中添加in即可首次展现折叠部分-->
               <div class="panel-body">
-                <p>比如说，我们现在有十张范冰冰的照片，另外还有一张不知道是谁的美女照片，[人工神经网络]就可以分析出这个美女是不是范冰冰。
+                <p style="font-size: 14px">比如说，我们现在有十张范冰冰的照片，另外还有一张不知道是谁的美女照片，[人工神经网络]就可以分析出这个美女是不是范冰冰。
                 首先，它先随机指定一组数据作为最标准的美女脸规范。
                 然后，它拿出其中一张范冰冰的照片，把她的眼睛大小、鼻子位置等数据进行若干次变换，使变换后的数据尽量接近标准脸数据。
                 接着，它再拿出另外一张范冰冰的照片，修改上述变换规则，使这两张照片的数据在变换后都能尽量接近标准脸数据。
@@ -215,7 +246,9 @@
             </div>
           </div>
         </div>
-        
+      </div>
+      
+      <div id="part2">
         <h4>光是最基本的元素</h4>
         <p>当一个小时的视频被展开之后，我们首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
         经计算后发现，CCTV-NEWS每小时亮度的平方差比BBC高出4.34%；比CNN高出6.69%。</p>
@@ -268,7 +301,9 @@
            </div>
 
         </div>
-
+      </div>
+      
+      <div id="part3">
         <h4>演播室里的各种拼</h4>
         <p>作为电视媒体的门面，演播室是各家暗中比拼的视觉载体。
         BBC、CCTV和CNN都使用着数量相当的演播室。
@@ -323,7 +358,9 @@
           <p style="text-align:right;padding-right:15px;font-size:14px">各频道主持人出镜比例</p>
           <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.png" alt="anchor time">
         </div>
-
+      </div>
+      
+      <div id="part4">
         <h4>新闻报道的改变或才刚开始</h4>
         <p>我们无法简单地以收视率或影响力作为标准，判断“美式”报道和“英式”报道哪一种更好。
         有节目把主持人视作与观众建立信任的关键途径；
@@ -339,7 +376,9 @@
         英国Channel 4时事部门主管Dorothy Byrne称年轻人对他国的新闻感兴趣，而且更加喜爱长篇报道。<sup><em><a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">4</a></em></sup>
         随着他们的成长，在社会中拥有更多的筹码，“千禧代”将会更加关注央行加息、养老金政策改革等话题。
         那时电视新闻是否会因他们的偏好而改变？或许只有时间才能告诉我们答案。</p>
-        <hr>
+      </div>
+      
+      <hr>
 
       </div>
     </div>
