@@ -179,219 +179,217 @@
 
   </head>
 
-  <body  data-spy="scroll" data-target="#navbar-example">
+  <body data-spy="scroll" data-target="#navbar-example">
     
     <div class="row">
       <div class="col-xs-12 col-sm-12">
-        
-        
-        
-      <nav class="navbar-default navbar-fixed-top">
-        
-        <div id="headpart">
-          <div class="row">
-            <div class="col-xs-8 col-sm-8"></div>
-            <div class="col-xs-1 col-sm-1">
-              <div id="circle1">
-                <div id="circle2"></div>
-              </div>
-            </div>
-            <div class="col-xs-1 col-sm-1 ">
-              <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big"></span>
-            </div>
-            <div class="col-xs-1 col-sm-1">
-              <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
-            </div>
-          </div>
-        </div>
-        
-        <div id="navbar-example">
-          <ul class="nav nav-tabs"  role="tablist">
-     
-              <li role="presentation" class="active "><a href="#part1">Part1</a></li>
-              <li role="presentation"><a href="#part2">Part2</a></li>
-              <li role="presentation"><a href="#part3">Part3</a></li>
-              <li role="presentation"><a href="#part4">Part4</a></li>
-
-          </ul>
-        </div>
-   
-      </nav>
-      
-      <div id="part1">   
-        <h2>我们和电脑一起看电视</h2>
-        <p>目前主流媒体平台依赖文字标注对新闻进行分类。
-        但面对电视台大量实时画面时，人工标注变得比较困难。
-        因此，我们尝试着利用人脸识别技术对BBC、CCTV-NEWS和CNN三个频道进行定义，试图提高对电视新闻的检索速度。
-        在这个过程当中，我们教会了计算机如何准确地“认”人，计算机也让我们从另一个角度看了一次电视。</p>
-        <p>简单来说，人脸识别技术要解决的问题就是：有一张照片上有个人，这个人大家都不知道也懒得去思考是谁，希望计算机能告诉大家他是谁。
-        那么，计算机是怎样得出它的答案的呢？<br>
+  
+            <nav class="navbar-default navbar-fixed-top">
+             
+                 <div id="headpart">
+                   <div class="row">
+                     <div class="col-xs-8 col-sm-8"></div>
+                     <div class="col-xs-1 col-sm-1">
+                       <div id="circle1">
+                         <div id="circle2"></div>
+                       </div>
+                     </div>
+                     <div class="col-xs-1 col-sm-1 ">
+                       <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big"></span>
+                     </div>
+                     <div class="col-xs-1 col-sm-1">
+                       <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
+                     </div>
+                   </div>
+                 </div>
+                 
+                 <div id="navbar-example">
+                   <ul class="nav nav-tabs"  role="tablist">
+              
+                       <li role="presentation" class="active"><a href="#part1">Part1</a></li>
+                       <li role="presentation"><a href="#part2">Part2</a></li>
+                       <li role="presentation"><a href="#part3">Part3</a></li>
+                       <li role="presentation"><a href="#part4">Part4</a></li>
          
-        计算机的解答过程大致可以分为三步：<br>
-        第一步，先看看这个画面中是否有人脸；
-        第二步，如果有张脸，看看脸上的眼镜有多大，眼距有多宽，鼻子长在哪；
-        第三步，将这张脸的眼睛鼻子的特点和已有的知道是谁的人脸的特点进行比较，如果二者的特点相似到一定程度，就可以认为这就是那个人的脸。<br>
+                   </ul>
+                 </div>
         
-        在这个解答过程中间，计算机有许多工具可以选择，其中一个比较好的工具就是[人工神经网络]。<br>
-        </p>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default" id="pull">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" 
-                  href="#collapseOne">
-                  <p style="font-size: 14px">点此了解更多神经网络知识，再次点击折叠</p>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse "> <!--class属性中添加in即可首次展现折叠部分-->
-              <div class="panel-body">
-                <p style="font-size: 14px">比如说，我们现在有十张范冰冰的照片，另外还有一张不知道是谁的美女照片，[人工神经网络]就可以分析出这个美女是不是范冰冰。
-                首先，它先随机指定一组数据作为最标准的美女脸规范。
-                然后，它拿出其中一张范冰冰的照片，把她的眼睛大小、鼻子位置等数据进行若干次变换，使变换后的数据尽量接近标准脸数据。
-                接着，它再拿出另外一张范冰冰的照片，修改上述变换规则，使这两张照片的数据在变换后都能尽量接近标准脸数据。
-                这样，它不断地拿出新一张范冰冰的照片，不断地修改变换规则，最终可以使这十张照片的数据在变换后都能非常接近标准脸数据。
-                这时，它就得到了最优的变换规则。
-                下面，它只需拿出那张不知道是谁的美女照片，按照该规则进行数据变换，得出的结果如果接近标准脸数据，那么她就是范冰冰；否则，她就不是范冰冰。
-                </p>
+            </nav>
+      
+            <!--<div  data-spy="scroll" data-target="#navbar-example">-->
+              <div id="part1">   
+                    <h2>我们和电脑一起看电视</h2>
+                    <p>目前主流媒体平台依赖文字标注对新闻进行分类。
+                    但面对电视台大量实时画面时，人工标注变得比较困难。
+                    因此，我们尝试着利用人脸识别技术对BBC、CCTV-NEWS和CNN三个频道进行定义，试图提高对电视新闻的检索速度。
+                    在这个过程当中，我们教会了计算机如何准确地“认”人，计算机也让我们从另一个角度看了一次电视。</p>
+                    <p>简单来说，人脸识别技术要解决的问题就是：有一张照片上有个人，这个人大家都不知道也懒得去思考是谁，希望计算机能告诉大家他是谁。
+                    那么，计算机是怎样得出它的答案的呢？<br>
+                     
+                    计算机的解答过程大致可以分为三步：<br>
+                    第一步，先看看这个画面中是否有人脸；
+                    第二步，如果有张脸，看看脸上的眼镜有多大，眼距有多宽，鼻子长在哪；
+                    第三步，将这张脸的眼睛鼻子的特点和已有的知道是谁的人脸的特点进行比较，如果二者的特点相似到一定程度，就可以认为这就是那个人的脸。<br>
+                    
+                    在这个解答过程中间，计算机有许多工具可以选择，其中一个比较好的工具就是[人工神经网络]。<br>
+                    </p>
+                    <div class="panel-group" id="accordion">
+                      <div class="panel panel-default" id="pull">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" 
+                              href="#collapseOne">
+                              <p style="font-size: 14px">点此了解更多神经网络知识，再次点击折叠</p>
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse "> <!--class属性中添加in即可首次展现折叠部分-->
+                          <div class="panel-body">
+                            <p style="font-size: 14px">比如说，我们现在有十张范冰冰的照片，另外还有一张不知道是谁的美女照片，[人工神经网络]就可以分析出这个美女是不是范冰冰。
+                            首先，它先随机指定一组数据作为最标准的美女脸规范。
+                            然后，它拿出其中一张范冰冰的照片，把她的眼睛大小、鼻子位置等数据进行若干次变换，使变换后的数据尽量接近标准脸数据。
+                            接着，它再拿出另外一张范冰冰的照片，修改上述变换规则，使这两张照片的数据在变换后都能尽量接近标准脸数据。
+                            这样，它不断地拿出新一张范冰冰的照片，不断地修改变换规则，最终可以使这十张照片的数据在变换后都能非常接近标准脸数据。
+                            这时，它就得到了最优的变换规则。
+                            下面，它只需拿出那张不知道是谁的美女照片，按照该规则进行数据变换，得出的结果如果接近标准脸数据，那么她就是范冰冰；否则，她就不是范冰冰。
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="part2">
-        <h4>光是最基本的元素</h4>
-        <p>当一个小时的视频被展开之后，我们首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
-        经计算后发现，CCTV-NEWS每小时亮度的平方差比BBC高出4.34%；比CNN高出6.69%。</p>
-        <p>虽然这听上去感觉并不是特别重要，而且追求一个所谓“统一”的感觉似乎也没有太大意义。
-        但我们认为这个数据反映的是CCTV-NEWS对播出效果的掌控不足。
-        因为不难发现，CCTV-NEWS的有些画面显得不够专业。
-        例如演播室背景设计偏暗；后期未修正画面白平衡等等。</p>
-
-        <div id="vp" class="carousel slide" data-ride="carousel" data-interval="3500">
-
-          <ol class="carousel-indicators vp_c">
-            <li data-target="#vp" data-slide-to="0" class="active"></li>
-            <li data-target="#vp" data-slide-to="1"></li>
-            <li data-target="#vp" data-slide-to="2"></li>
-            <li data-target="#vp" data-slide-to="3"></li>
-          </ol>
-
-          <div class="carousel-inner">
-
-            <div class="active item" id="vp1">
-              <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-b-i.jpg" alt="cctv brightness impression">
-            </div>
-
-            <div class="item" id="vp2">
-              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-b-i.jpg" alt="bbc brightness impression">
-            </div>
-
-            <div class="item" id="vp3">
-              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-night-shots.jpg" alt="cctv night shots">
-            </div>
-
-            <div class="item" id="vp4">
-              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-night-shots.jpg" alt="bbc night shots">
-            </div>
-
-          </div>
-
-          <a class="left carousel-control vp_c" href="#vp" role="button" data-slide="prev">
-             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-             <span class="sr-only">Previous</span>
-           </a>
-           <a class="right carousel-control vp_c" href="#vp" role="button" data-slide="next">
-             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-             <span class="sr-only">Next</span>
-           </a>
-
-           <!-- toggle play -->
-           <div id='vp_tp'>
-
-           </div>
-
-        </div>
-      </div>
-      
-      <div id="part3">
-        <h4>演播室里的各种拼</h4>
-        <p>作为电视媒体的门面，演播室是各家暗中比拼的视觉载体。
-        BBC、CCTV和CNN都使用着数量相当的演播室。
-        但近期搬进了新大楼的BBC和CCTV-NEWS在硬件上实力稍强。</p>
-        <p>从演播室画面的动态感来看，BBC以<span id="sample1">27.23%</span>的动态镜头超出CNN（13.51%）和CCTV-NEWS（11.51%）不少距离。
-        这主要是因为BBC拥有一个面积更大的演播室和数台高自动化的机器人摄像机。
-        <sup><em><a href="(http://www.bbc.co.uk/academy/technology/article/art20140313104307334)">1</a></em></sup></p>
-
-        <div class="media_c">
-
-          <video id="vid" src="http://pic000.oss-cn-beijing.aliyuncs.com/robocam.mp4" poster="http://pic000.oss-cn-beijing.aliyuncs.com/robocam_poster.JPG">
-          </video>
-
-        </div>
-
-        <p>而CNN对演播室的设计却突显着“去中心”化的理念。
-        他们在2012年美国大选之时，特意翻新了演播室。
-        按照CNN自己的话说：</p>
-        <blockquote>
-        <p>这个演播室没有一个真正意义上的主播桌。这里将会充满对话，和各种用来讲故事的技术。</p>
-        </blockquote>
-        <p>这也主导着CNN对新闻报道的呈现—
-        淡化线性的叙述方式，突出多角度的解读。
-        为此CNN也在创造出更多的出镜场景上花了不少功夫，试图以不同的报道环境暗示不同的角度。</p>
-        <p>比如，他们会利用道具、景深和拍摄角度制造出不同的空间感以及
-        使用退役的新闻间做背景等等。
-        <sup><em><a href="http://www.newscaststudio.com/2012/01/09/cnn-finally-begins-using-newsroom-for-newsroom/">2</a></em></sup></p>
-
-        <div class="media_c">
-          <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/newstream.JPG" alt="news stream">
-        </div>
-        <!-- 插图 -->
-        <!-- 插图:
-          cnn-20150717201305.jpeg
-          cnn-20150717192155.jpeg
-        -->
-        <p>但正如下文要指出的，CNN在表面上突出“多角度”的报道可能仅仅是演绎新闻的手段。</p>
-
-        <h4>我们看的是主持人还是新闻</h4>
-        <p>
-        通过对比，我们发现CNN主持人在新闻节目中的出镜时间普遍高于BBC和CCTV-NEWS。
-        这也应和了<span id="stephen"><u>Stephen Cushion</u></span>的研究数据。
-        他在《News and Politics》中指出，英国的滚动新闻节目播出了更多在现场的记者，而美国更注重主持人。
-        <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup>
-        </p>
-        <p>出于美国受众长期的习惯，CNN在节目推广上也依赖于主持人的“个人色彩”。
-        他们通常以主持人命名节目，例如“Amanpour”和“World News with Hala Gorani”。
-        而BBC则倾向赋予节目名称更多的现场感，例如“Global”，“Focus on Africa”以及“Asia Business Report”。
-        CCTV-NEWS虽然在节目定位上是走BBC的路线，但在播出手段上更加接近CNN。</p>
-
-        <div class="media_c" id="sample2">
-          <p style="text-align:right;padding-right:15px;font-size:14px">各频道主持人出镜比例</p>
-          <img src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.png" alt="anchor time">
-        </div>
-      </div>
-      
-      <div id="part4">
-        <h4>新闻报道的改变或才刚开始</h4>
-        <p>我们无法简单地以收视率或影响力作为标准，判断“美式”报道和“英式”报道哪一种更好。
-        有节目把主持人视作与观众建立信任的关键途径；
-        也有节目将主持人的角色淡化。</p>
-        <p>从目前的趋势来看，摄像机镜头的焦点正从主持人身上回归到新闻现场。
-        但3分钟左右的新闻报道正处在一个尴尬的境地。
-        无法比twitter快速，也没有足够的篇幅报道复杂的国际事件。
-        Vice News借助9到20分钟左右的深度现场报道赢得了默多克7千万美元的投资，估值14亿美元；<sup><em><a href="http://www.forbes.com/sites/jeffbercovici/2013/08/19/thanks-to-rupert-murdoch-vice-is-worth-1-4-billion-could-it-be-in-play-soon/">5</a></em></sup> 并通过与HBO的长期合作，登陆了有线电视。
-        他们深入伊斯兰国内部的深度报道，仅仅在YouTube上就已播出7百万次。
-        </p>
-
-        <p id="test">
-        英国Channel 4时事部门主管Dorothy Byrne称年轻人对他国的新闻感兴趣，而且更加喜爱长篇报道。<sup><em><a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">4</a></em></sup>
-        随着他们的成长，在社会中拥有更多的筹码，“千禧代”将会更加关注央行加息、养老金政策改革等话题。
-        那时电视新闻是否会因他们的偏好而改变？或许只有时间才能告诉我们答案。</p>
-      </div>
-      
-      <hr>
-
+              
+              <div id="part2">
+                    <h4>光是最基本的元素</h4>
+                    <p>当一个小时的视频被展开之后，我们首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
+                    经计算后发现，CCTV-NEWS每小时亮度的平方差比BBC高出4.34%；比CNN高出6.69%。</p>
+                    <p>虽然这听上去感觉并不是特别重要，而且追求一个所谓“统一”的感觉似乎也没有太大意义。
+                    但我们认为这个数据反映的是CCTV-NEWS对播出效果的掌控不足。
+                    因为不难发现，CCTV-NEWS的有些画面显得不够专业。
+                    例如演播室背景设计偏暗；后期未修正画面白平衡等等。</p>
+            
+                    <div id="vp" class="carousel slide" data-ride="carousel" data-interval="3500">
+            
+                      <ol class="carousel-indicators vp_c">
+                        <li data-target="#vp" data-slide-to="0" class="active"></li>
+                        <li data-target="#vp" data-slide-to="1"></li>
+                        <li data-target="#vp" data-slide-to="2"></li>
+                        <li data-target="#vp" data-slide-to="3"></li>
+                      </ol>
+            
+                      <div class="carousel-inner">
+            
+                        <div class="active item" id="vp1">
+                          <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-b-i.jpg" alt="cctv brightness impression">
+                        </div>
+            
+                        <div class="item" id="vp2">
+                          <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-b-i.jpg" alt="bbc brightness impression">
+                        </div>
+            
+                        <div class="item" id="vp3">
+                          <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-night-shots.jpg" alt="cctv night shots">
+                        </div>
+            
+                        <div class="item" id="vp4">
+                          <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-night-shots.jpg" alt="bbc night shots">
+                        </div>
+            
+                      </div>
+            
+                      <a class="left carousel-control vp_c" href="#vp" role="button" data-slide="prev">
+                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                         <span class="sr-only">Previous</span>
+                       </a>
+                       <a class="right carousel-control vp_c" href="#vp" role="button" data-slide="next">
+                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                         <span class="sr-only">Next</span>
+                       </a>
+            
+                       <!-- toggle play -->
+                       <div id='vp_tp'>
+            
+                       </div>
+            
+                    </div>
+              </div>
+              
+              <div id="part3">
+                    <h4>演播室里的各种拼</h4>
+                    <p>作为电视媒体的门面，演播室是各家暗中比拼的视觉载体。
+                    BBC、CCTV和CNN都使用着数量相当的演播室。
+                    但近期搬进了新大楼的BBC和CCTV-NEWS在硬件上实力稍强。</p>
+                    <p>从演播室画面的动态感来看，BBC以<span id="sample1">27.23%</span>的动态镜头超出CNN（13.51%）和CCTV-NEWS（11.51%）不少距离。
+                    这主要是因为BBC拥有一个面积更大的演播室和数台高自动化的机器人摄像机。
+                    <sup><em><a href="(http://www.bbc.co.uk/academy/technology/article/art20140313104307334)">1</a></em></sup></p>
+            
+                    <div class="media_c">
+            
+                      <video id="vid" src="http://pic000.oss-cn-beijing.aliyuncs.com/robocam.mp4" poster="http://pic000.oss-cn-beijing.aliyuncs.com/robocam_poster.JPG">
+                      </video>
+            
+                    </div>
+            
+                    <p>而CNN对演播室的设计却突显着“去中心”化的理念。
+                    他们在2012年美国大选之时，特意翻新了演播室。
+                    按照CNN自己的话说：</p>
+                    <blockquote>
+                    <p>这个演播室没有一个真正意义上的主播桌。这里将会充满对话，和各种用来讲故事的技术。</p>
+                    </blockquote>
+                    <p>这也主导着CNN对新闻报道的呈现—
+                    淡化线性的叙述方式，突出多角度的解读。
+                    为此CNN也在创造出更多的出镜场景上花了不少功夫，试图以不同的报道环境暗示不同的角度。</p>
+                    <p>比如，他们会利用道具、景深和拍摄角度制造出不同的空间感以及
+                    使用退役的新闻间做背景等等。
+                    <sup><em><a href="http://www.newscaststudio.com/2012/01/09/cnn-finally-begins-using-newsroom-for-newsroom/">2</a></em></sup></p>
+            
+                    <div class="media_c">
+                      <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/newstream.JPG" alt="news stream">
+                    </div>
+                    <!-- 插图 -->
+                    <!-- 插图:
+                      cnn-20150717201305.jpeg
+                      cnn-20150717192155.jpeg
+                    -->
+                    <p>但正如下文要指出的，CNN在表面上突出“多角度”的报道可能仅仅是演绎新闻的手段。</p>
+            
+                    <h4>我们看的是主持人还是新闻</h4>
+                    <p>
+                    通过对比，我们发现CNN主持人在新闻节目中的出镜时间普遍高于BBC和CCTV-NEWS。
+                    这也应和了<span id="stephen"><u>Stephen Cushion</u></span>的研究数据。
+                    他在《News and Politics》中指出，英国的滚动新闻节目播出了更多在现场的记者，而美国更注重主持人。
+                    <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup>
+                    </p>
+                    <p>出于美国受众长期的习惯，CNN在节目推广上也依赖于主持人的“个人色彩”。
+                    他们通常以主持人命名节目，例如“Amanpour”和“World News with Hala Gorani”。
+                    而BBC则倾向赋予节目名称更多的现场感，例如“Global”，“Focus on Africa”以及“Asia Business Report”。
+                    CCTV-NEWS虽然在节目定位上是走BBC的路线，但在播出手段上更加接近CNN。</p>
+            
+                    <div class="media_c" id="sample2">
+                      <p style="text-align:right;padding-right:15px;font-size:14px">各频道主持人出镜比例</p>
+                      <img id="pic" src="http://pic000.oss-cn-beijing.aliyuncs.com/anchortime.png" alt="anchor time">
+                    </div>
+              </div>
+              
+              <div id="part4">
+                    <h4>新闻报道的改变或才刚开始</h4>
+                    <p>我们无法简单地以收视率或影响力作为标准，判断“美式”报道和“英式”报道哪一种更好。
+                    有节目把主持人视作与观众建立信任的关键途径；
+                    也有节目将主持人的角色淡化。</p>
+                    <p>从目前的趋势来看，摄像机镜头的焦点正从主持人身上回归到新闻现场。
+                    但3分钟左右的新闻报道正处在一个尴尬的境地。
+                    无法比twitter快速，也没有足够的篇幅报道复杂的国际事件。
+                    Vice News借助9到20分钟左右的深度现场报道赢得了默多克7千万美元的投资，估值14亿美元；<sup><em><a href="http://www.forbes.com/sites/jeffbercovici/2013/08/19/thanks-to-rupert-murdoch-vice-is-worth-1-4-billion-could-it-be-in-play-soon/">5</a></em></sup> 并通过与HBO的长期合作，登陆了有线电视。
+                    他们深入伊斯兰国内部的深度报道，仅仅在YouTube上就已播出7百万次。
+                    </p>
+            
+                    <p id="test">
+                    英国Channel 4时事部门主管Dorothy Byrne称年轻人对他国的新闻感兴趣，而且更加喜爱长篇报道。<sup><em><a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">4</a></em></sup>
+                    随着他们的成长，在社会中拥有更多的筹码，“千禧代”将会更加关注央行加息、养老金政策改革等话题。
+                    那时电视新闻是否会因他们的偏好而改变？或许只有时间才能告诉我们答案。</p>
+              </div>
+           <!-- </div>-->
+    
       </div>
     </div>
 
@@ -404,14 +402,19 @@
       var model = $("body").css('background-color');
       if (model =="rgb(255, 255, 255)") {
         $("body,#headpart,#circle2,.modal-content,#pull,.panel-heading").css('background-color','rgb(50, 50, 50)');
-        $("#circle1,#sample2").css('background-color','rgb(255, 255, 255)');
+        $("#circle1,#pic").css('background-color','rgb(255, 255, 255)');
         $("p,#big,#small,h2,h4").css('color','rgb(255, 255, 255)');
-        //$("ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover").css('background-color','rgb(255, 255, 255)');
+        /*$("ul.nav-tabs li.active a,ul.nav-tabs li.active a:hover").css('background-color','rgb(255, 255, 255)');
+        $("ul.nav-tabs li.active a,ul.nav-tabs li.active a:hover").css('color','rgb(50, 50, 50)');
+        $("ul.nav-tabs li.active a,ul.nav-tabs li.active a:hover").css('border','rgb(255, 255, 255)');*/
       }
       if (model =="rgb(50, 50, 50)") {
-        $("body,#headpart,#circle2,.modal-content").css('background-color','rgb(255, 255, 255)');
+        $("body,#headpart,#circle2,.modal-content,#pull,.panel-heading,#sample2").css('background-color','rgb(255, 255, 255)');
         $("#circle1").css('background-color','rgb(50, 50, 50)');
         $("p,#big,#small,h2,h4").css('color','rgb(50, 50, 50)');
+        /*$("ul.nav-tabs li.active a").css('background-color','rgb(50, 50, 50)');
+        $("ul.nav-tabs li.active a").css('color','rgb(255, 255, 255)');
+        $("ul.nav-tabs li.active a").css('border','rgb(50, 50, 50)');*/
       }
     })
     
