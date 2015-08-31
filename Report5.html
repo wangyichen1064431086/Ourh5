@@ -34,12 +34,11 @@
       padding-right: 15px;
     }
     /*#big_f{
-      position: absolute;
-      width: 50px;
+      
     }
     #small_f{
       position: absolute;
-      width: 50px;
+      left:85%;
     }*/
     p {
       font-size: 18px;
@@ -75,38 +74,25 @@
       width:100%
     }
 
-    #caption {
+    #caption,#captionnew{
       position: absolute;
       background-color: black;
       opacity: 0.8;
-      top: 55%;
+      top: 70%;
       right: 3%;
-      width:175px;
-      height:75px;
+      width:150px;
+      height:40px;
       z-index:99;
       text-align: center;
       color: #bbbbbb;
-      vertical-align: middle;
-      font-size: 12px;
-    }
-    #captionnew {
-      position: absolute;
-      background-color: black;
-      opacity: 0.8;
-      top: 55%;
-      right: 3%;
-      width:175px;
-      height:75px;
-      z-index:99;
-      text-align: center;
-      color: #bbbbbb;
-      vertical-align: middle;
+     /* vertical-align: middle;*/
       font-size: 12px;
     }
 
+
     .cap {
       text-align: right;
-      margin-top: 15px;
+      margin-top: 7px;
       margin-right: 15px;
       font-size: 14px;
     }
@@ -165,6 +151,15 @@
       padding-top: 20px;
     }
     #headpart{
+    
+      background-color: rgb(255, 255, 255);
+    }
+    .gp{
+      padding-right:10px;
+      text-align: right;
+      padding-top: 5px;
+    }
+    .gp1{
       padding-top: 5px;
     }
     /*#navbar_example{
@@ -179,22 +174,29 @@
     
     <div class="row">
       <div class="col-xs-12 col-sm-12">
-  
-            <nav class="navbar-default navbar-fixed-top">
-             
-                <div id="headpart">
-                   <div class="row">
-                     <div class="col-xs-7 col-sm-7"></div>
-                     <div class="col-xs-2 col-sm-2 ">
-                       <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" style="font-size: 25px" id="big_f"></span>
-                     </div>
-                     <div class="col-xs-2 col-sm-2">
-                       <span class="glyphicon glyphicon-zoom-out " aria-hidden="true" style="font-size: 25px" id="small_f"></span>
-                     </div>
-                   </div>
+
+            <nav class="navbar-default navbar-fixed-top">     
+              <div id="headpart">
+                <div class="row">
+                  <div class="col-xs-8 col-sm-8"></div>
+                  <div class="col-xs-2 col-sm-2 gp">
+                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" style="font-size: 25px" id="big_f"></span>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 gp1">
+                    <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" style="font-size: 25px" id="small_f"></span>
+                  </div>
                 </div>
-                 
+              </div>
             </nav>
+           
+           <!--
+            <nav class="navbar-default navbar-fixed-top" id="headpart">     
+           
+                     <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" style="font-size: 25px" id="big_f"></span>
+                     <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" style="font-size: 25px" id="small_f"></span>
+        
+            </nav>
+            -->
             <div id="part1">   
                 <h2>和计算机一起看电视</h2>
                 <p>    认脸是人类最基本的技能，1965年三名计算机科学家在美国情报机构的赞助下将这一能力程序化。
@@ -413,14 +415,14 @@
       }
     })
 
-    $('#vp').append('<div id="caption"><div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div></div>')
+    $('#vp').append('<div id="caption"><div class="cap"><span class="cap_t">CCTV-NEWS</span></div></div>')
     $('#vp').on('slid.bs.carousel', function (e) {
       var cp = e.relatedTarget.id
       if (cp == "vp1") {
-        $('#caption').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div>')
+        $('#caption').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span></div>')
       }
       if (cp == "vp2") {
-        $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>HardTalk背景设计</div>')
+        $('#caption').html('<div class="cap"><span class="cap_t">BBC</span></div>')
       }
     })
     
@@ -437,14 +439,14 @@
       }
     })
 
-    $('#vpnew').append('<div id="captionnew"><div class="cap"><span class="cap_t">CCTV-NEWS</span><br>晚间画面有明显色偏</div></div>')
+    $('#vpnew').append('<div id="captionnew"><div class="cap"><span class="cap_t">CCTV-NEWS</span></div></div>')
     $('#vpnew').on('slid.bs.carousel', function (e) {
       var cp = e.relatedTarget.id
       if (cp == "vp3") {
-        $('#captionnew').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span><br>晚间画面有明显色偏</div>')
+        $('#captionnew').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span></div>')
       }
       if (cp == "vp4") {
-        $('#captionnew').html('<div class="cap"><span class="cap_t">BBC</span><br>画面色彩曝光准确</div>')
+        $('#captionnew').html('<div class="cap"><span class="cap_t">BBC</span></div>')
       }
     })
     
