@@ -155,16 +155,18 @@
     /*#navbar_example{
       margin-top: 50px;
     }*/
-    
-    ul.nav li{
-      width: 25%;
+    ul.nav-tabs{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+      width: 20%;
       /*border: solid 1px black;*/
     }
-    ul.nav{
+    ul.nav-tabs li a{
         background-color: rgb(200, 200, 200);
         border-radius: 4px;
         border: 1px solid #ddd;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
     }
     ul.nav-tabs li a{
         border-radius: 0;
@@ -172,8 +174,8 @@
     }
     ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
         color: #fff;
-        background: rgb(50, 50, 50);
-        border: 1px solid rgb(50, 50, 50);
+        background: rgb(100, 100, 100);
+        border: 1px solid rgb(100, 100, 100);
     }
     </style>
 
@@ -206,10 +208,11 @@
                  <div id="navbar-example">
                    <ul class="nav nav-tabs"  role="tablist">
               
-                       <li role="presentation" class="active"><a href="#part1">Part1</a></li>
+                       <li role="presentation" class="active"><a href="#part1" >Part1</a></li>
                        <li role="presentation"><a href="#part2">Part2</a></li>
                        <li role="presentation"><a href="#part3">Part3</a></li>
                        <li role="presentation"><a href="#part4">Part4</a></li>
+                       <li role="presentation"><a href="#part5">Part5</a></li>
          
                    </ul>
                  </div>
@@ -352,7 +355,9 @@
                       cnn-20150717192155.jpeg
                     -->
                     <p>但正如下文要指出的，CNN在表面上突出“多角度”的报道可能仅仅是演绎新闻的手段。</p>
+              </div>
             
+              <div id="part4">
                     <h4>我们看的是主持人还是新闻</h4>
                     <p>
                     通过对比，我们发现CNN主持人在新闻节目中的出镜时间普遍高于BBC和CCTV-NEWS。
@@ -371,7 +376,7 @@
                     </div>
               </div>
               
-              <div id="part4">
+              <div id="part5">
                     <h4>新闻报道的改变或才刚开始</h4>
                     <p>我们无法简单地以收视率或影响力作为标准，判断“美式”报道和“英式”报道哪一种更好。
                     有节目把主持人视作与观众建立信任的关键途径；
@@ -397,7 +402,16 @@
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script>
-      
+    $("part2").click(function(){
+        var a=$(document).scrollTop();
+        if (a>70) {
+          $(document).scrollTop(a-70);  //code
+       }
+    })
+   
+
+    
+    
     $("#circle1").click(function(){
       var model = $("body").css('background-color');
       if (model =="rgb(255, 255, 255)") {
