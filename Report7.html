@@ -197,10 +197,10 @@
                        </div>
                      </div>
                      <div class="col-xs-1 col-sm-1 ">
-                       <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big"></span>
+                       <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" id="big_f"></span>
                      </div>
                      <div class="col-xs-1 col-sm-1">
-                       <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small"></span>
+                       <span class="glyphicon glyphicon-zoom-out" aria-hidden="true" id="small_f"></span>
                      </div>
                    </div>
                  </div>
@@ -209,7 +209,7 @@
                    <ul class="nav nav-tabs"  role="tablist">
               
                        <li role="presentation" class="active"><a href="#part1" >Part1</a></li>
-                       <li role="presentation"><a href="#part2">Part2</a></li>
+                       <li role="presentation" id="button2"><a href="#part2">Part2</a></li>
                        <li role="presentation"><a href="#part3">Part3</a></li>
                        <li role="presentation"><a href="#part4">Part4</a></li>
                        <li role="presentation"><a href="#part5">Part5</a></li>
@@ -402,9 +402,9 @@
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script>
-    $("part2").click(function(){
-        var a=$(document).scrollTop();
-        if (a>70) {
+    $("#button2").click(function(){
+        var a=$("#part2").css('top');
+    if (a>70) {
           $(document).scrollTop(a-70);  //code
        }
     })
@@ -431,15 +431,15 @@
         $("ul.nav-tabs li.active a").css('border','rgb(50, 50, 50)');*/
       }
     })
-    
-    $("#big").click(function(){
+    /**************放大字体***************/
+    $("#big_f").click(function(){
       var wordsize = parseInt($("p").css('font-size'));
       if (wordsize<24) {
          $("p").css('font-size',wordsize+1);//code
       }
     })
-    
-    $("#small").click(function(){
+    /*******************缩小字体*****************/
+    $("#small_f").click(function(){
       var wordsize = parseInt($("p").css('font-size'));
       if (wordsize>16) {
          $("p").css('font-size',wordsize-1);//code
