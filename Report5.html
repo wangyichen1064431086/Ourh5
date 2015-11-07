@@ -10,8 +10,10 @@
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap-glyphicons/1.0/css/bootstrap-glyphicons.css">
+    <!--
     <link rel="stylesheet" href="./bootstrap-dashboard.css">
-
+    -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,7 +26,9 @@
     <script src="./event-drops.js"></script>
     <link rel="stylesheet" href="./event-drops.css">
     -->
+
     <style type="text/css">
+    /*
         * {
          padding:0;
          margin:0;
@@ -33,26 +37,24 @@
          text-align: center;
         }
         h2{
-         text-align: left;
-         background-color: #AFAFAF;
-         color: #FFFFFF;
-         margin: 5px 10px 5px 10px;
-         padding:5px 5px 5px 5px;
-         white-space: pre;
+        margin: 15px;
+        }
+        h3{
+          margin: 15px;
         }
         .class1{
          text-align: left;
          margin:15px;
          font-size: 18px;
         }
-        h3{
-         text-align: center;
+        ul{
+          margin: 15px;
         }
         img{
             width:100%;
         }
         .class2{
-            border:10px groove #8B4513; /*groove ridge inset outset*/
+            border:10px groove #8B4513;
         }
         .class3{
             margin: 1px;
@@ -69,12 +71,61 @@
         #block2{
           padding: 20px 150px 20px 150px;
         }
+    */
+
+    body {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    #vp {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    img {
+      width:100%
+    }
+
+    #caption {
+      position: absolute;
+      background-color: black;
+      opacity: 0.8;
+      top: 55%;
+      right: 3%;
+      width:175px;
+      height:75px;
+      z-index:9999;
+      text-align: center;
+      color: #bbbbbb;
+      /*line-height:25px;*/
+      vertical-align: middle;
+      font-size: 12px;
+    }
+
+    .cap {
+      text-align: right;
+      margin-top: 15px;
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    .cap_t {
+      opacity: 0.5;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
     </style>
+
   </head>
-  
-  
-  
+
   <body>
+<<<<<<< HEAD
     <div>
       <h1><strong>人脸识别项目报告</strong></h1>
     </div>
@@ -165,10 +216,44 @@
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cnn%E6%BC%94%E6%92%AD%E5%AE%A4/c/cnn-20150715194130.jpeg" alt="bbc2">
+=======
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <h2 id="-">我们和电脑看了一周的电视，然后发现</h2>
+        <p>面对海量的视频信息，我们希望有一个搜索引擎能够帮助我们快速的找到想要的内容。
+        特别是电视台播出的新闻。
+        这些视频通常没有任何标注，难以用文字检索。
+        因此我们尝试着利用人脸识别对BBC、CCTV-NEWS、CNN三个频道的视频进行分类。</p>
+        <p>大致的方法是，当视频中出现一个人脸的的时候，我们告诉计算机他/她叫什么，是主持人还是某个国家的领导人等信息。
+        虽然没有语意的理解能力，但来去几次后，计算机能够通过脸部特征“认识”人了。
+        随后我们让计算机统计出这些人在什么时候出现了多久等等数据。
+        这个过程是交互的，我们“教会”计算机认脸，计算机也让我们从另一个角度看了一次电视。</p>
+        <h4 id="-">光是最基本的元素</h4>
+        <p>当一个小时的视频被展开之后，首先察觉到CCTV-NEWS的画面看上去没有BBC和CNN统一。
+        为了证实这不是一个特例，我们让电脑分析每一张图片。
+        结果也不出乎意料，CCTV-NEWS每张图片之间的亮度差别普遍是三个频道里是最高的。</p>
+        <p>虽然画面没有必要看上去统一，因为人眼的适应能力很强。但我们觉得背后的成因或许可以为CCTV-NEWS掌控播出效果提供一定的参考。</p>
+
+        <div id="vp" class="carousel slide" data-ride="carousel" data-interval="4000">
+<!--
+          <ol class="carousel-indicators">
+            <li data-target="#vp" data-slide-to="0" class="active"></li>
+            <li data-target="#vp" data-slide-to="1"></li>
+            <li data-target="#vp" data-slide-to="2"></li>
+            <li data-target="#vp" data-slide-to="3"></li>
+          </ol>
+-->
+          <div class="carousel-inner">
+
+            <div class="active item" id="vp1">
+              <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-b-i.jpg" alt="cctv brightness impression">
+>>>>>>> origin/master
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <img src="http://pic000.oss-cn-beijing.aliyuncs.com/cnn%E6%BC%94%E6%92%AD%E5%AE%A4/f/cnn-20150715101710.jpeg" alt="bbc3">
+            <div class="item" id="vp2">
+              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-b-i.jpg" alt="bbc brightness impression">
             </div>
+<<<<<<< HEAD
         </div>
        
     </div>
@@ -182,12 +267,87 @@
         <div class="row class3"> 
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-6">
               <img class="img-circle" src="http://pic000.oss-cn-beijing.aliyuncs.com/cnn%E8%A1%A5/cnn-20150717192155.jpeg" alt="bbc1"><!--图片可选形状 class="img-rounded/img-circle/img-thumbnail"-->
+=======
+
+            <div class="item" id="vp3">
+              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/cctv-night-shots.jpg" alt="cctv night shots">
+>>>>>>> origin/master
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-6">
-              <img class="img-circle" src="http://pic000.oss-cn-beijing.aliyuncs.com/cnn%E8%A1%A5/cnn-20150717201305.jpeg" alt="bbc2">
+            <div class="item" id="vp4">
+              <img  src="http://pic000.oss-cn-beijing.aliyuncs.com/bbc-night-shots.jpg" alt="bbc night shots">
             </div>
+          </div>
+<!--
+          <a class="left carousel-control" href="#vp" role="button" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+             <span class="sr-only">Previous</span>
+           </a>
+           <a class="right carousel-control" href="#vp" role="button" data-slide="next">
+             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+             <span class="sr-only">Next</span>
+           </a>
+-->
         </div>
+
+        <h4 id="-">演播室里的各种拼</h4>
+        <p>BBC、CCTV、CNN都使用着数量差不多的演播室。
+        作为电视媒体的门面，演播室是各家暗中比拼的视觉载体。
+        单从硬件上来看，近期搬进了新大楼的BBC和CCTV-NEWS实力比较强。
+        <!-- 需要有数据和图片的支持 --></p>
+        <p>理论上来说一个更大的演播室，就能让摄像机有更多的运动空间。
+        但真正让这一个优势得到充分发挥的却是BBC的机器人摄像机。<sup><em><a href="(http://www.bbc.co.uk/academy/technology/article/art20140313104307334)">1</a></em></sup>
+        从演播室画面的动态感来看，BBC超出CNN和CCTV-NEWS不少距离。
+        <!-- 插入运动镜头统计图 --></p>
+        <p>CNN对演播室的设计却突显示出“去中心”化的理念。
+        在2012年为美国大选翻新演播室时，他们将两个演播室组合在了一起。
+        按照他们自己的话说。</p>
+        <blockquote>
+        <p>这个演播室没有一个真正意义上的主持人桌子，甚至都不会有一个完全来自新闻间的人。演播室里将会充满对话，和各种用来讲故事的技术。
+        <!-- 插入视频 --></p>
+        </blockquote>
+        <p>这样的理念也主导着CNN对新闻报道的呈现。
+        淡化了线性的叙述方式，突出多角度的诠释。
+        为此CNN也花了更多的功夫为创造出更多的出镜场景。
+        试图以不同的地点环境代表不同的角度。</p>
+        <p>下面介绍一些CNN的方法：</p>
+        <ul>
+        <li>利用道具、景深和角度制造出不同的空间感。
+        News Stream 节目就在香港演播室的前方布置了几个移动电视平台。<!-- 插图:
+        cnn-20150717201305.jpeg
+        cnn-20150717192155.jpeg
+        --></li>
+        <li>利用以前的新闻间
+        <sup><em><a href="http://www.newscaststudio.com/2012/01/09/cnn-finally-begins-using-newsroom-for-newsroom/">2</a></em></sup></li>
+        </ul>
+        <p>正如下文要指出的，CNN在表面上突出“多角度”的报道，或仅仅是演绎新闻的手段。</p>
+        <h4 id="-">我们看的是主持人还是新闻</h4>
+        <p>通过对比主持人在一个栏目中的出镜时间，我们发现CNN的主持人在一档栏目中出现的时间远远高于BBC。
+        这也应和了CNN的主持人在电视新闻中占据了更加主要的角色。
+        Stephen Cushion在研究电视新闻和政治的书中也指出：</p>
+        <blockquote>
+        <p>“英国滚动新闻播出了更多记者的现场信息。美国更注重主持人，他们在画面中有更长的时间。” <sup><em><a href="https://books.google.com/books?id=5MgqBwAAQBAJ&amp;pg=PA92&amp;lpg=PA92#v=onepage&amp;q&amp;f=false">3</a></em></sup></p>
+        </blockquote>
+        <p>从命名上也能看出，CNN通常以主持人命名节目，例如“Amanpour”和“Quest Means Business”。或是出于美国受众长期的习惯，CNN这样盈利性质的电视媒体在营销上更加依赖于主持人的“个人色彩”。
+        而BBC则赋予了新闻节目更多的现场感。例如“Global”，“Focus on Africa”以及“Asia Business Report”。CCTV-NEWS在节目定位上更加靠近BBC，但在播出手段上更加接近CNN。
+        <!-- 插入数据图表 --></p>
+        <h4 id="-">新闻报道的改变或才刚开始</h4>
+        <p>电视作为影响力最大的媒介，新闻主播也受到了很多争议。
+        一些人把他们视作与观众建立信任的关键途径。
+        也有一些节目将主持人的角色淡化，例如CBS的《60分钟》和ABC的《20/20》</p>
+        <p>我们无法简单的以收视率或者影响力作为标准，判断为这两种报道形式哪一种更好。
+        但从“千禧代”的身上发生的趋势来看，未来的新闻应让摄像头更多的聚焦到报道本身。
+        英国Channel 4时事部门主管Dorothy Byrne出席座谈会表示年轻人对他国的新闻感兴趣，而且更加喜爱长篇报道。<sup><em><a href="http://www.theguardian.com/media/2014/aug/23/vice-news-younger-viewers-bbc-channel-4-youtube-social-media">4</a></em></sup></p>
+        <p>而3分钟左右的新闻报道处在一个尴尬的境地。
+        无法比140字的twitter准确和快速，也没有足够的篇幅对复杂的国际事件进行深度报道。
+        作为后起新秀的Vice News借助对伊斯兰国、克里米亚危机、非洲难民等事件的详细报道（篇幅从9分钟到40多分钟左右）赢得了默多克7千万美元的投资，估值14亿美元。<sup><em><a href="http://www.forbes.com/sites/jeffbercovici/2013/08/19/thanks-to-rupert-murdoch-vice-is-worth-1-4-billion-could-it-be-in-play-soon/">5</a></em></sup></p>
+        <p>也有人怀疑这些深入第一现场的报道仅仅是满足了年轻人的好奇心。
+        随着他们的成长，在社会中拥有更多的筹码。
+        央行加息，养老金政策改革这类新闻还是会成为主要的报道方向。
+        到那个时候，他们对报道形式的偏好是否会回归传统？还是电视新闻会因此而改变？或许只有时间才能告诉我们答案。</p>
+        <hr>
+      </div>
     </div>
+<<<<<<< HEAD
     
     <div class="class1">
         CNN有更多播报地点。
@@ -240,8 +400,29 @@
     </div>
     
     
+=======
+
+>>>>>>> origin/master
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script>
+    $('#vp').append('<div id="caption"><div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div></div>')
+    $('#vp').on('slid.bs.carousel', function (e) {
+      var cp = e.relatedTarget.id
+      if (cp == "vp1") {
+        $('#caption').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span><br>对话栏目背景偏暗</div>')
+      }
+      if (cp == "vp2") {
+        $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>HardTalk背景设计</div>')
+      }
+      if (cp == "vp3") {
+        $('#caption').html('<div class="cap"><span class="cap_t">CCTV-NEWS</span><br>晚间画面有明显色偏</div>')
+      }
+      if (cp == "vp4") {
+        $('#caption').html('<div class="cap"><span class="cap_t">BBC</span><br>画面色彩曝光准确</div>')
+      }
+    })
+    </script>
   </body>
 </html>
-
